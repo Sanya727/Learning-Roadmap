@@ -1,39 +1,105 @@
 body {
-  font-family: Arial, sans-serif;
-  max-width: 700px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #f3f9ff;
+  color: #2c3e50;
+  max-width: 800px;
   margin: 40px auto;
   padding: 0 20px;
   line-height: 1.6;
-  background: #fdfdfd;
-  color: #333;
+  transition: background 0.3s;
 }
 
 h1 {
   text-align: center;
   color: #007acc;
+  margin-bottom: 5px;
+}
+
+p {
+  text-align: center;
+  font-size: 1.1em;
+  color: #555;
+}
+
+.logo {
+  display: block;
+  margin: 15px auto;
+  width: 100px;
+  animation: fadeIn 2s ease;
 }
 
 details {
   margin-bottom: 20px;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  padding: 10px;
-  background: #f9f9f9;
+  border: 1px solid #d0e4f5;
+  border-radius: 10px;
+  padding: 14px 20px;
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0, 123, 204, 0.08);
+  transition: transform 0.2s ease;
+}
+
+details:hover {
+  transform: scale(1.01);
 }
 
 summary {
-  font-size: 1.2em;
-  font-weight: bold;
+  font-size: 1.25em;
+  font-weight: 600;
   cursor: pointer;
+  color: #007acc;
+  outline: none;
+}
+
+details[open] {
+  background: #eaf6ff;
 }
 
 ul {
   margin-top: 10px;
+  padding-left: 20px;
+}
+
+ul li {
+  margin-bottom: 8px;
+  list-style: none;
+  position: relative;
+  padding-left: 22px;
+}
+
+ul li::before {
+  content: "✔️";
+  position: absolute;
+  left: 0;
+  top: 0;
+  font-size: 0.9em;
 }
 
 footer {
-  margin-top: 40px;
+  margin-top: 50px;
   text-align: center;
-  font-size: 0.9em;
-  color: #777;
+  font-size: 0.95em;
+  color: #888;
+  padding-top: 12px;
+  border-top: 1px solid #eee;
+}
+
+/* Smooth Image Entry */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  body {
+    padding: 0 10px;
+  }
+
+  .logo {
+    width: 80px;
+  }
+
+  summary {
+    font-size: 1.1em;
+  }
 }
